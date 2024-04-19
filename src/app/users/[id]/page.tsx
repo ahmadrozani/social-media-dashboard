@@ -1,3 +1,4 @@
+import { Breadcrumb } from "@/components/UI/breadcrumbs/breadcrumbs";
 import { UserType } from "@/lib/utils/user-type";
 import axios from "axios";
 
@@ -51,6 +52,15 @@ export default async function UsersPage({
 
   return (
     <main className="flex min-h-screen text-black flex-col items-center justify-between p-24 bg-gray-50">
+      <div className="w-full my-8 justify-start items-start ">
+        <Breadcrumb
+          customPaths={[
+            { label: "List User", path: "/users" },
+            { label: `${user?.name}`, path: "" },
+          ]}
+          className="hidden md:block pt-4 md:pt-0"
+        />
+      </div>
       <div className="container mx-auto p-8 bg-white rounded-lg shadow-md">
         {/* personal information */}
         <h1 className="text-4xl font-bold mb-8 text-center text-gray-800 border-b-4 border-gray-300 pb-2">
@@ -117,7 +127,7 @@ export default async function UsersPage({
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:text-blue-700 transition duration-300"
                   >
-                    Read More
+                    View Post
                   </a>
                 </div>
               </li>

@@ -11,10 +11,12 @@
   "dependencies": {
     "@types/react-table": "^7.7.20",
     "axios": "^1.6.8",
+    "lucide-react": "^0.372.0",
     "next": "14.2.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-table": "^7.8.0"
+    "react-table": "^7.8.0",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",
