@@ -1,6 +1,7 @@
 import { Breadcrumb } from "@/components/UI/breadcrumbs/breadcrumbs";
 import { UserType } from "@/lib/utils/user-type";
 import axios from "axios";
+import Link from "next/link";
 
 async function getUserById(id: string): Promise<UserType | null> {
   try {
@@ -121,14 +122,11 @@ export default async function UsersPage({
                 </h3>
                 <p className="text-gray-600">{post.body}</p>
                 <div className="flex justify-end mt-4">
-                  <a
-                    href={`https://jsonplaceholder.typicode.com/posts/${post.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-blue-700 transition duration-300"
-                  >
-                    View Post
-                  </a>
+                  <Link href={`/post/${post.id}`}>
+                    <div className="text-blue-500 hover:text-blue-700 transition duration-300">
+                      View Post
+                    </div>
+                  </Link>
                 </div>
               </li>
             ))}
@@ -149,14 +147,11 @@ export default async function UsersPage({
                   {album.title}
                 </h3>
                 <div className="flex justify-end mt-4">
-                  <a
-                    href={`https://jsonplaceholder.typicode.com/albums/${album.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-gray-700 transition duration-300"
-                  >
-                    View Album
-                  </a>
+                  <Link href={`/album/${album.id}`}>
+                    <div className="text-blue-500 hover:text-blue-700 transition duration-300">
+                      View Album
+                    </div>
+                  </Link>
                 </div>
               </li>
             ))}
